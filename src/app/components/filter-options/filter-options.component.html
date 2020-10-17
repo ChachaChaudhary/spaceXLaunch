@@ -1,0 +1,7 @@
+<label class="filter-title">{{title}}</label>
+<div [formGroup]="group" class="options-container">
+    <ng-container *ngFor="let option of options;let i=index;" >
+        <input type="radio" [id]="name+'_option_'+i" [name]="name" [formControlName]="name" [value]="option.value" [checked]="group.get(name).value==option.value">
+        <label [for]="name+'_option_'+i">{{option.display}}</label>
+    </ng-container>
+</div>

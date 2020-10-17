@@ -1,0 +1,4 @@
+<form [formGroup]="filterForm" class="container">
+<label class="bold fs-20">Filters</label>
+<div class="options-container"><app-filter-options *ngFor="let field of fields" [group]="filterForm" [name]="field.name" [title]="field.title" [options]="field.options"></app-filter-options></div>
+</form>

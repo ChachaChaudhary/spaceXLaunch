@@ -1,0 +1,2 @@
+<app-launch-list-item *ngFor="let launchItem of launchList" [item]="launchItem"></app-launch-list-item>
+<div *ngIf="launchList.length===0" class="no-records">No Launch Programs Found!</div>

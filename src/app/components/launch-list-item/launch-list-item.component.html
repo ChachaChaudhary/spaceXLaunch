@@ -1,0 +1,23 @@
+<div class="container p-25">
+<img [src]="item?.links.mission_patch_small"/>
+<div class="mission-title bold">{{item?.mission_name}} # {{item?.flight_number}}</div>
+<div class="mb-10">
+    <label class="bold">Mission Ids:</label> 
+    <span class="mission-value">{{item?.mission_id.length==0?"N/A":""}}</span>
+<ul *ngIf="item?.mission_id.length>0" class="mission-value mission-id-list">
+    <li *ngFor="let mission of item?.mission_id">{{mission}}</li>
+</ul>
+</div>
+<div  class="mb-10 flex">
+    <label class="bold flex-1">Launch Year:</label>
+    <span class="mission-value flex-1">{{item.launch_year}}</span>
+</div>
+<div  class="mb-10 flex">
+    <label class="bold flex-1">Successful Launch:</label>
+    <span class="mission-value flex-1">{{item.launch_success}}</span>
+</div>
+<div  class="mb-10 flex">
+    <label class="bold flex-1">Successful Landing:</label>
+    <span class="mission-value flex-1">{{item?.rocket?.first_stage?.cores[0]?.land_success}}</span>
+</div>
+</div>
