@@ -1,5 +1,5 @@
 <div class="container p-25">
-<img [src]="item?.links.mission_patch_small"/>
+<div class="mission-image-container"><img [src]="item?.links.mission_patch_small" [alt]="item?.mission_name+' Image'"/></div>
 <div class="mission-title bold">{{item?.mission_name}} # {{item?.flight_number}}</div>
 <div class="mb-10">
     <label class="bold">Mission Ids:</label> 
