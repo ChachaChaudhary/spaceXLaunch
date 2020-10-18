@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { LaunchListComponent } from './components/launch-list/launch-list.component';
 import { LaunchListItemComponent } from './components/launch-list-item/launch-list-item.component';
 import {TransferHttpCacheModule} from '@nguniversal/common';
+import { LazyLoadImageDirective } from './directives/lazy-load-image.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
     FilterOptionsComponent,
     FilterComponent,
     LaunchListComponent,
-    LaunchListItemComponent
+    LaunchListItemComponent,
+    LazyLoadImageDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
