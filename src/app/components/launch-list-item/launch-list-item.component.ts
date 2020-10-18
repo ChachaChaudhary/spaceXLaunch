@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./launch-list-item.component.css']
 })
 export class LaunchListItemComponent implements OnInit {
-  @Input('item') item:Array<any>
+  @Input('item') item:any
   constructor() { }
 
   ngOnInit(): void {

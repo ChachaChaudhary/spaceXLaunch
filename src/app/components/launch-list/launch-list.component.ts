@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { END_POINTS } from 'src/assets/constants/endPoints';
 import { ApiService } from 'src/app/service/api.service';
 
@@ -8,16 +8,24 @@ import { ApiService } from 'src/app/service/api.service';
   templateUrl: './launch-list.component.html',
   styleUrls: ['./launch-list.component.css']
 })
-export class LaunchListComponent implements AfterViewInit {
+export class LaunchListComponent implements OnInit {
   launchList:Array<any>=[];
-  constructor(private activatedRoute: ActivatedRoute,private apiService:ApiService) { }
+  constructor(private activatedRoute: ActivatedRoute,private apiService:ApiService,private router:Router) { }
+  public ngOnInit(): void {
+    this.router.events
+     .subscribe((event) => {
+       if (event instanceof NavigationEnd) {
 
-  ngAfterViewInit(): void {
-    this.activatedRoute.queryParams.subscribe((params) => {
-      this.apiService.get(END_POINTS.launch,{limit:100,...params}).subscribe((list)=>{
-        this.launchList=list||[];
-      });
-   });
-  }
+        this.activatedRoute.queryParams.subscribe((params) => {
+          this.apiService.get(END_POINTS.launch,{limit:100,...params}).subscribe((list)=>{
+            this.launchList=list||[];
+          });
+        });
+       }
+      
+   }); 
+
+}
+
 
 }

@@ -8,6 +8,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { RouterModule } from '@angular/router';
 import { LaunchListComponent } from './components/launch-list/launch-list.component';
 import { LaunchListItemComponent } from './components/launch-list-item/launch-list-item.component';
+import {TransferHttpCacheModule} from '@nguniversal/common';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,12 @@ import { LaunchListItemComponent } from './components/launch-list-item/launch-li
     LaunchListItemComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    TransferHttpCacheModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
