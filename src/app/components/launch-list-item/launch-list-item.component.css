@@ -2,7 +2,7 @@
     background: #eee;
     width:100%;
     text-align: center;
-
+    height: 256px;
 }
 
   @keyframes placeHolderShimmer {
@@ -13,7 +13,7 @@
       background-position: 468px 0;
     }
   }
-  .mission-image-container img[src=""]{
+  .mission-image-container.image-loading{
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;

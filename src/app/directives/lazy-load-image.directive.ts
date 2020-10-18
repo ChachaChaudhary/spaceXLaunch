@@ -41,6 +41,7 @@ export class LazyLoadImageDirective implements OnChanges{
   }
   private setImageSrcFromDataset(imageTag) {
     imageTag.src = this.source;
+    imageTag.parentNode.classList.remove('image-loading');
   }
 
 }
