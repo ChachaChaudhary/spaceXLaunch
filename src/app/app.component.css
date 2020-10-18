@@ -1,11 +1,4 @@
-/*No Record Message*/
-.no-records{
-    text-align: center;
-        width: 100%;
-        margin-top: 10px;
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
+
     /*Error Ribbon*/
     .errorRibbon{
     position: fixed;
