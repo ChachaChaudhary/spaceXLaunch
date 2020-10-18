@@ -26,9 +26,9 @@
     "@angular/platform-server": "^10.1.6",
     "@angular/router": "^10.1.6",
     "@nguniversal/express-engine": "^10.1.0",
-    "compression": "^1.7.4",
     "core-js": "^2.5.4",
     "express": "^4.17.1",
+    "express-static-gzip": "^2.0.8",
     "rxjs": "~6.2.0",
     "zone.js": "~0.10.3"
   },
